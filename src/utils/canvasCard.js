@@ -255,7 +255,7 @@ export async function renderResultCard({ imageSrc, result, siteLabel }) {
   ctx.textAlign = 'center'
   ctx.fillStyle = 'rgba(237,239,248,0.35)'
   ctx.font = '500 19px "Inter", sans-serif'
-  ctx.fillText('Fictional value — created for entertainment only', W / 2, dividerY + 86)
+  ctx.fillText('Fictional value created for entertainment only', W / 2, dividerY + 86)
 
   return canvas.toDataURL('image/png')
 }
