@@ -32,7 +32,7 @@ export default function HeroSection() {
         className="text-balance font-display text-4xl font-semibold leading-[1.1] tracking-tight text-mist sm:text-6xl"
       >
         Discover Your X Profile's{' '}
-        <span className="text-gradient">Fictional Value</span> 🚀
+        <span className="text-gradient">Fictional Value</span> 
       </motion.h1>
 
       <motion.p
