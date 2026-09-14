@@ -42,7 +42,7 @@ export default function HeroSection() {
         className="mx-auto mt-5 max-w-xl text-balance text-base text-mist/65 sm:text-lg"
       >
         Upload your profile picture and discover your imaginary digital worth,
-        rarity, and profile personality. Purely for fun — built to share.
+        rarity, and profile personality. Purely for fun built to share.
       </motion.p>
     </section>
   )
