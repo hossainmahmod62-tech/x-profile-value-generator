@@ -13,7 +13,7 @@ export default function ImageUploader({ previewSrc, onFileSelect, onClear, disab
   const [error, setError] = useState('')
   const inputRef = useRef(null)
 
-  const handleFiles = useCallback(
+  const handleFiles = useCallback
     (fileList) => {
       const file = fileList?.[0]
       if (!file) return
@@ -120,7 +120,7 @@ export default function ImageUploader({ previewSrc, onFileSelect, onClear, disab
                   {isDragging ? 'Drop it right here' : 'Drag & drop your profile picture'}
                 </p>
                 <p className="mt-1 text-xs text-mist/50">
-                  or click to browse — JPG, PNG, or WEBP
+                  or click to browse JPG, PNG, or WEBP
                 </p>
               </div>
             </motion.div>
