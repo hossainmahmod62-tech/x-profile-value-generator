@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-void text-mist font-body antialiased;
+    background-image: theme('backgroundImage.aurora');
+    background-attachment: fixed;
+    min-height: 100vh;
+    /* Respect iPhone notches / home-indicator safe areas */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+
+  /* Visible keyboard focus for accessibility */
+  :focus-visible {
+    outline: 2px solid #6EE7F5;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: rgba(157, 111, 255, 0.35);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply relative border border-white/10 bg-white/[0.045] shadow-glass;
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    /* A thin bright edge along the top, like light catching real glass. */
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.14),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+      0 8px 32px rgba(0, 0, 0, 0.35);
+  }
+
+  .glass-panel-hover {
+    @apply transition-colors duration-300 hover:bg-white/[0.065] hover:border-white/20;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(120deg, #EDEFF8 0%, #B9C6FF 45%, #9D6FFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Used on the big dollar figure: a gradient fill with a slow shimmer
+     sweep — one deliberate moment of motion on the page's focal number. */
+  .value-shimmer {
+    background: linear-gradient(
+      100deg,
+      #b9c6ff 0%,
+      #edeff8 20%,
+      #9d6fff 40%,
+      #edeff8 60%,
+      #b9c6ff 80%
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 5s linear infinite;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
